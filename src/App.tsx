@@ -17,13 +17,13 @@ const socialLinks = [
 ];
 
 const platforms = [
-  { name: 'Coursera', url: 'https://www.coursera.org/user/1ef3fa40dee335ebc46b89cd655dae07', image: 'https://www.langoly.com/wp-content/uploads/2021/09/coursera-logo.png' },
-  { name: 'HackerRank', url: 'https://www.hackerrank.com/tun874', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/HackerRank_Icon-1000px.png/800px-HackerRank_Icon-1000px.png' },
-  { name: 'freeCodeCamp', url: 'https://www.freecodecamp.org/tun874', image: 'https://design-style-guide.freecodecamp.org/downloads/fcc_primary_small.jpg' },
-  { name: 'Codecademy', url: 'https://www.codecademy.com/profiles/tun487', image: 'https://logos-download.com/wp-content/uploads/2019/11/Codecademy_Logo.png' },
-  { name: 'DataCamp', url: 'https://www.datacamp.com/portfolio/tun874', image: 'https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/hq30ze9287y9ztkmcdhy' },
-  { name: 'StackOverflow', url: 'https://stackoverflow.com/users/20314865/tuan784', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Stack_Overflow_icon.svg/768px-Stack_Overflow_icon.svg.png' },
-  { name: 'LeetCode', url: 'https://leetcode.com/Tuan784/', image: 'https://super9.space/wp-content/uploads/2022/01/leetcode.png' },
+  { name: 'Coursera', url: 'https://www.coursera.org/user/1ef3fa40dee335ebc46b89cd655dae07', image: 'https://cdn.simpleicons.org/coursera/0056D2' },
+  { name: 'HackerRank', url: 'https://www.hackerrank.com/tun874', image: 'https://cdn.simpleicons.org/hackerrank/00EA64' },
+  { name: 'freeCodeCamp', url: 'https://www.freecodecamp.org/tun874', image: 'https://cdn.simpleicons.org/freecodecamp/0A0A23' },
+  { name: 'Codecademy', url: 'https://www.codecademy.com/profiles/tun487', image: 'https://cdn.simpleicons.org/codecademy/1F243A' },
+  { name: 'DataCamp', url: 'https://www.datacamp.com/portfolio/tun874', image: 'https://cdn.simpleicons.org/datacamp/03E849' },
+  { name: 'StackOverflow', url: 'https://stackoverflow.com/users/20314865/tuan784', image: 'https://cdn.simpleicons.org/stackoverflow/F58025' },
+  { name: 'LeetCode', url: 'https://leetcode.com/Tuan784/', image: 'https://cdn.simpleicons.org/leetcode/FFA116' },
 ];
 
 export default function App() {
@@ -244,15 +244,6 @@ export default function App() {
                 </div>
               </a>
             ))}
-          </div>
-          
-          <div className="mt-8 rounded-xl border border-gray-800 bg-gray-900/40 p-4">
-            <h3 className="text-lg font-medium text-center mb-4 text-gray-300">Stars History</h3>
-            <img 
-              src="https://api.star-history.com/chart?repos=tun6944/ViT_Coffee_Leaves_Diseases,Johnyyd/DoAnTotNghiep,tiao051/Violence-Detection&type=date&theme=dark&legend=top-left"
-              alt="Star History Chart"
-              className="w-full h-auto rounded-lg"
-            />
           </div>
         </section>
 
