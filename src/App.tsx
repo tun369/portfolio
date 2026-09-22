@@ -11,7 +11,7 @@ const LinkedinIcon = () => (
 );
 
 const socialLinks = [
-  { name: 'GitHub', url: 'https://github.com/tun6944', icon: <GithubIcon /> },
+  { name: 'GitHub', url: 'https://github.com/tun369', icon: <GithubIcon /> },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/me', icon: <LinkedinIcon /> },
   { name: 'Email', url: 'mailto:tuanhg136@gmail.com', icon: <Mail size={20} /> },
 ];
@@ -118,9 +118,9 @@ export default function App() {
                 Coding Activity
               </h3>
               <div className="flex flex-col gap-4">
-                <a href="https://wakatime.com/@tun6944" target="_blank" rel="noreferrer" className="block hover:opacity-80 transition-opacity">
+                <a href="https://wakatime.com/@tun369" target="_blank" rel="noreferrer" className="block hover:opacity-80 transition-opacity">
                   <img 
-                    src="https://wakatime.com/share/@tun6944/6798bd34-ca76-481c-a41b-5cff1a6428b2.svg" 
+                    src="https://wakatime.com/share/@tun369/6798bd34-ca76-481c-a41b-5cff1a6428b2.svg" 
                     alt="Wakatime stats" 
                     className="w-full h-auto rounded-lg"
                   />
@@ -171,7 +171,7 @@ export default function App() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="rounded-xl border border-gray-800 bg-gray-900/40 p-4 hover:border-gray-700 transition-colors">
               <img 
-                src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=tun6944&theme=algolia&utcOffset=8" 
+                src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=tun369&theme=algolia&utcOffset=8" 
                 alt="Productive Time" 
                 className="w-full h-auto"
               />
@@ -179,7 +179,7 @@ export default function App() {
             
             <div className="rounded-xl border border-gray-800 bg-gray-900/40 p-4 hover:border-gray-700 transition-colors">
               <img 
-                src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=tun6944&theme=algolia" 
+                src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=tun369&theme=algolia" 
                 alt="Most Commit Languages" 
                 className="w-full h-auto"
               />
@@ -187,7 +187,7 @@ export default function App() {
 
             <div className="rounded-xl border border-gray-800 bg-gray-900/40 p-4 hover:border-gray-700 transition-colors">
                <img 
-                src="https://github-readme-streak-stats.herokuapp.com?user=tun6944&theme=algolia&hide_border=true" 
+                src="https://github-readme-streak-stats.herokuapp.com?user=tun369&theme=algolia&hide_border=true" 
                 alt="GitHub Streak" 
                 className="w-full h-auto"
               />
@@ -195,7 +195,7 @@ export default function App() {
             
             <div className="rounded-xl border border-gray-800 bg-gray-900/40 p-4 hover:border-gray-700 transition-colors">
               <img 
-                src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=tun6944&theme=algolia" 
+                src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=tun369&theme=algolia" 
                 alt="Repositories per Language" 
                 className="w-full h-auto"
               />
@@ -204,7 +204,7 @@ export default function App() {
 
           <div className="rounded-xl border border-gray-800 bg-gray-900/40 p-4 hover:border-gray-700 transition-colors">
             <img 
-              src="https://github-readme-activity-graph.vercel.app/graph?username=tun6944&theme=react-dark" 
+              src="https://github-readme-activity-graph.vercel.app/graph?username=tun369&theme=react-dark" 
               alt="Github activity graph" 
               className="w-full h-auto"
             />
@@ -221,7 +221,7 @@ export default function App() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { name: 'ViT Coffee Leaves Diseases', owner: 'tun6944', desc: 'Vision Transformer implementation for detecting diseases in coffee leaves.' },
+              { name: 'ViT Coffee Leaves Diseases', owner: 'tun369', desc: 'Vision Transformer implementation for detecting diseases in coffee leaves.' },
               { name: 'Violence-Detection', owner: 'tiao051', desc: 'Machine learning model for real-time violence detection in video streams.' },
               { name: 'DoAnTotNghiep', owner: 'Johnyyd', desc: 'Graduation project focusing on applying modern technologies.' },
             ].map((repo) => (
@@ -250,7 +250,7 @@ export default function App() {
       </main>
 
       <footer className="border-t border-gray-800 py-8 text-center text-gray-500">
-        <p>© {new Date().getFullYear()} Tuan (tun6944). Built with React & Tailwind CSS.</p>
+        <p>© {new Date().getFullYear()} Tuan (tun369). Built with React & Tailwind CSS.</p>
         <p className="text-sm mt-2">Vietnam 🇻🇳</p>
       </footer>
     </div>
