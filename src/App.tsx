@@ -118,9 +118,9 @@ export default function App() {
                 Coding Activity
               </h3>
               <div className="flex flex-col gap-4">
-                <a href="https://wakatime.com/@tun369" target="_blank" rel="noreferrer" className="block hover:opacity-80 transition-opacity">
+                <a href="https://wakatime.com/@tun6944" target="_blank" rel="noreferrer" className="block hover:opacity-80 transition-opacity">
                   <img 
-                    src="https://wakatime.com/share/@tun369/6798bd34-ca76-481c-a41b-5cff1a6428b2.svg" 
+                    src="https://wakatime.com/share/@tun6944/6798bd34-ca76-481c-a41b-5cff1a6428b2.svg" 
                     alt="Wakatime stats" 
                     className="w-full h-auto rounded-lg"
                   />
