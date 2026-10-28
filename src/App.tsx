@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Mail, MapPin, Terminal, Award, BookOpen, Coffee, Code, ExternalLink } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, MapPin, Terminal, Award, BookOpen, Coffee, Code, ExternalLink, X, ZoomIn } from 'lucide-react';
 
 const GithubIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
@@ -16,17 +16,27 @@ const socialLinks = [
   { name: 'Email', url: 'mailto:tuanhg136@gmail.com', icon: <Mail size={20} /> },
 ];
 
-const platforms = [
-  { name: 'Coursera', url: 'https://www.coursera.org/user/1ef3fa40dee335ebc46b89cd655dae07', image: 'https://cdn.simpleicons.org/coursera/0056D2' },
-  { name: 'HackerRank', url: 'https://www.hackerrank.com/tun874', image: 'https://cdn.simpleicons.org/hackerrank/00EA64' },
-  { name: 'freeCodeCamp', url: 'https://www.freecodecamp.org/tun874', image: 'https://cdn.simpleicons.org/freecodecamp/0A0A23' },
-  { name: 'Codecademy', url: 'https://www.codecademy.com/profiles/tun487', image: 'https://cdn.simpleicons.org/codecademy/1F243A' },
-  { name: 'DataCamp', url: 'https://www.datacamp.com/portfolio/tun874', image: 'https://cdn.simpleicons.org/datacamp/03E849' },
-  { name: 'StackOverflow', url: 'https://stackoverflow.com/users/20314865/tuan784', image: 'https://cdn.simpleicons.org/stackoverflow/F58025' },
-  { name: 'LeetCode', url: 'https://leetcode.com/Tuan784/', image: 'https://cdn.simpleicons.org/leetcode/FFA116' },
-];
-
 export default function App() {
+  const [isZoomOpen, setIsZoomOpen] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsZoomOpen(false);
+      }
+    };
+    if (isZoomOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isZoomOpen]);
+
   return (
     <div className="min-h-screen font-sans">
       {/* Hero Section */}
@@ -41,7 +51,7 @@ export default function App() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
             </span>
-            Available for work
+            Looking for a job
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
@@ -88,17 +98,17 @@ export default function App() {
               <h2 className="text-3xl font-bold text-white">About Me</h2>
             </div>
             <p className="text-gray-400 text-lg leading-relaxed">
-              I am a senior university student based in the Socialist Republic of Vietnam. 
+              I'm a final-year student live in the Socialist Republic of Vietnam. 
               With over 6 months of hands-on programming experience, I am actively seeking 
               opportunities to grow as a fresher. My journey involves solving algorithmic challenges 
-              and building modern web applications.
+              and building modern ML/DL applications.
             </p>
-            <div className="flex gap-4 pt-4">
-              <div className="flex items-center gap-2 text-sm text-gray-400 bg-gray-900/50 px-4 py-2 rounded-full border border-gray-800">
+            <div className="flex flex-wrap gap-4 pt-4">
+              <div className="flex items-center gap-2 text-sm text-gray-300 bg-gray-900/60 px-4 py-2 rounded-full border border-gray-800">
                 <MapPin size={16} className="text-blue-400" />
-                Vietnam
+                Ho Chi Minh City, Vietnam
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-400 bg-gray-900/50 px-4 py-2 rounded-full border border-gray-800">
+              <div className="flex items-center gap-2 text-sm text-gray-300 bg-gray-900/60 px-4 py-2 rounded-full border border-gray-800">
                 <Code size={16} className="text-green-400" />
                 6+ Months Experience
               </div>
@@ -113,52 +123,35 @@ export default function App() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5" />
             <div className="relative space-y-6">
-              <h3 className="text-xl font-semibold text-white flex items-center gap-2">
-                <Coffee size={20} className="text-yellow-500" />
-                Coding Activity
-              </h3>
+              <div className="flex items-center justify-between">
+                <h3 className="text-xl font-semibold text-white flex items-center gap-2">
+                  <Coffee size={20} className="text-yellow-500" />
+                  Coding Activity
+                </h3>
+                <span className="text-xs text-gray-500 flex items-center gap-1">
+                  <ZoomIn size={14} /> Click to zoom
+                </span>
+              </div>
+              
               <div className="flex flex-col gap-4">
-                <a href="https://wakatime.com/@tun6944" target="_blank" rel="noreferrer" className="block hover:opacity-80 transition-opacity">
+                <button 
+                  type="button"
+                  onClick={() => setIsZoomOpen(true)}
+                  className="group relative block w-full text-left cursor-zoom-in rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+                  aria-label="Enlarge Coding Activity chart"
+                >
                   <img 
                     src="https://wakatime.com/share/@tun6944/6798bd34-ca76-481c-a41b-5cff1a6428b2.svg" 
                     alt="Wakatime stats" 
-                    className="w-full h-auto rounded-lg"
+                    className="w-full h-auto rounded-lg transition-transform duration-300 group-hover:scale-[1.02]"
                   />
-                </a>
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-medium text-sm backdrop-blur-[1px] rounded-lg">
+                    <ZoomIn size={18} /> Click to zoom in
+                  </div>
+                </button>
               </div>
             </div>
           </motion.div>
-        </section>
-
-        {/* Skills & Platforms */}
-        <section className="space-y-12">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4">Learning & Profiles</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              I actively learn and practice on various platforms to sharpen my problem-solving skills and domain knowledge.
-            </p>
-          </div>
-          
-          <div className="flex flex-wrap justify-center gap-6">
-            {platforms.map((platform, idx) => (
-              <motion.a
-                key={platform.name}
-                href={platform.url}
-                target="_blank"
-                rel="noreferrer"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: idx * 0.05 }}
-                viewport={{ once: true }}
-                className="group flex flex-col items-center gap-3 p-6 rounded-xl border border-gray-800 bg-gray-900/40 hover:bg-gray-800/80 transition-all w-32"
-              >
-                <div className="h-12 w-12 flex items-center justify-center bg-white rounded-lg p-2 group-hover:scale-110 transition-transform">
-                  <img src={platform.image} alt={platform.name} className="max-h-full max-w-full object-contain" />
-                </div>
-                <span className="text-sm font-medium text-gray-300 text-center">{platform.name}</span>
-              </motion.a>
-            ))}
-          </div>
         </section>
 
         {/* GitHub Statistics */}
@@ -186,7 +179,7 @@ export default function App() {
             </div>
 
             <div className="rounded-xl border border-gray-800 bg-gray-900/40 p-4 hover:border-gray-700 transition-colors">
-               <img 
+              <img 
                 src="https://github-readme-streak-stats.herokuapp.com?user=tun369&theme=algolia&hide_border=true" 
                 alt="GitHub Streak" 
                 className="w-full h-auto"
@@ -201,15 +194,6 @@ export default function App() {
               />
             </div>
           </div>
-
-          <div className="rounded-xl border border-gray-800 bg-gray-900/40 p-4 hover:border-gray-700 transition-colors">
-            <img 
-              src="https://github-readme-activity-graph.vercel.app/graph?username=tun369&theme=react-dark" 
-              alt="Github activity graph" 
-              className="w-full h-auto"
-            />
-          </div>
-
         </section>
 
         {/* Highlighted Projects */}
@@ -221,13 +205,30 @@ export default function App() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { name: 'ViT Coffee Leaves Diseases', owner: 'tun369', desc: 'Vision Transformer implementation for detecting diseases in coffee leaves.' },
-              { name: 'Violence-Detection', owner: 'tiao051', desc: 'Machine learning model for real-time violence detection in video streams.' },
-              { name: 'DoAnTotNghiep', owner: 'Johnyyd', desc: 'Graduation project focusing on applying modern technologies.' },
+              { 
+                name: 'Coffee Leaves Diseases using ViT', 
+                repoPath: 'tun369/ViT_Coffee_Leaves_Diseases',
+                desc: 'An end-to-end computer vision project for detecting and classifying coffee leaf diseases. It uses YOLOv11 to find and locate infected areas on leaves, and then applies a Vision Transformer (ViT) model to classify specific disease types with high accuracy, helping farmers protect plant health early.' 
+              },
+              { 
+                name: 'Violence-Detection', 
+                repoPath: 'tiao051/Violence-Detection',
+                desc: 'A comprehensive deep learning-based violence detection system designed for intelligent video surveillance. The system implements a 3-stage spatiotemporal feature extraction pipeline (RemoNet: SME -> STE -> GTE) that analyzes video streams with lightweight CNN backbones to identify violent behavior in real-time with minimal latency and high accuracy.' 
+              },
+              { 
+                name: 'DoAnTotNghiep', 
+                repoPath: 'Johnyyd/DoAnTotNghiep',
+                desc: 'The Pharmaceutical Processing Management System (PPMS) is a comprehensive platform for managing drug manufacturing processes compliant with GMP-WHO (Good Manufacturing Practice - World Health Organization) standards. The system integrates production management, quality control, traceability, and data integrity assurance in a closed pharmaceutical manufacturing environment.' 
+              },
+              { 
+                name: 'Admission Chatbot', 
+                repoPath: 'tun369/admission_chatbot',
+                desc: 'An intelligent university admission counseling chatbot built with Retrieval-Augmented Generation (RAG). It crawls official admission data from the university website using BeautifulSoup, processes and chunks text using LangChain, and stores vectors in Qdrant for semantic search. It features a clean Flask web interface that allows prospective students to ask questions and receive quick, accurate answers about admission requirements, majors, and deadlines.' 
+              },
             ].map((repo) => (
               <a 
                 key={repo.name}
-                href={`https://github.com/${repo.owner}/${repo.name}`}
+                href={`https://github.com/${repo.repoPath}`}
                 target="_blank"
                 rel="noreferrer"
                 className="group p-6 rounded-xl border border-gray-800 bg-gray-900/40 hover:bg-gray-800 transition-all flex flex-col h-full"
@@ -238,9 +239,9 @@ export default function App() {
                   </h3>
                   <ExternalLink size={20} className="text-gray-500 group-hover:text-blue-400" />
                 </div>
-                <p className="text-gray-400 text-sm mb-6 flex-grow">{repo.desc}</p>
+                <p className="text-gray-400 text-sm mb-6 leading-relaxed flex-grow">{repo.desc}</p>
                 <div className="text-xs text-gray-500 font-mono">
-                  {repo.owner}/{repo.name}
+                  {repo.repoPath}
                 </div>
               </a>
             ))}
@@ -251,8 +252,74 @@ export default function App() {
 
       <footer className="border-t border-gray-800 py-8 text-center text-gray-500">
         <p>© {new Date().getFullYear()} Tuan (tun369). Built with React & Tailwind CSS.</p>
-        <p className="text-sm mt-2">Vietnam 🇻🇳</p>
+        <p className="text-sm mt-2">Ho Chi Minh City, Vietnam 🇻🇳</p>
       </footer>
+
+      {/* Lightbox Modal for Coding Activity */}
+      <AnimatePresence>
+        {isZoomOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10">
+            {/* Backdrop */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsZoomOpen(false)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-md"
+            />
+
+            {/* Modal Dialog */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.92, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: 15 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              className="relative w-full max-w-4xl max-h-[90vh] bg-gray-900/95 border border-gray-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col z-10"
+            >
+              {/* Modal Header */}
+              <div className="flex items-center justify-between px-6 py-4 border-b border-gray-800 bg-gray-950/60">
+                <div className="flex items-center gap-2">
+                  <Coffee size={20} className="text-yellow-500" />
+                  <h3 className="text-lg font-semibold text-white">Coding Activity Breakdown</h3>
+                </div>
+                <div className="flex items-center gap-3">
+                  <a 
+                    href="https://wakatime.com/@tun6944" 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs text-blue-400 hover:text-blue-300 bg-blue-500/10 hover:bg-blue-500/20 px-3 py-1.5 rounded-lg border border-blue-500/20 transition-colors"
+                  >
+                    <span>Open on WakaTime</span>
+                    <ExternalLink size={14} />
+                  </a>
+                  <button 
+                    type="button"
+                    onClick={() => setIsZoomOpen(false)}
+                    className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors focus:outline-none"
+                    aria-label="Close dialog"
+                  >
+                    <X size={20} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Modal Body / Image View */}
+              <div className="p-4 sm:p-6 overflow-auto flex items-center justify-center bg-gray-950/40">
+                <img 
+                  src="https://wakatime.com/share/@tun6944/6798bd34-ca76-481c-a41b-5cff1a6428b2.svg" 
+                  alt="Wakatime detailed stats" 
+                  className="w-full max-w-3xl h-auto object-contain rounded-lg shadow-lg border border-gray-800/60"
+                />
+              </div>
+
+              {/* Modal Footer info */}
+              <div className="px-6 py-3 border-t border-gray-800 bg-gray-950/60 text-xs text-gray-500 text-center">
+                Press <kbd className="px-1.5 py-0.5 rounded bg-gray-800 border border-gray-700 text-gray-300 font-mono">Esc</kbd> or click outside to close
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
