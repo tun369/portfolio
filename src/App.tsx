@@ -12,8 +12,8 @@ const LinkedinIcon = () => (
 
 const socialLinks = [
   { name: 'GitHub', url: 'https://github.com/tun369', icon: <GithubIcon /> },
-  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/me', icon: <LinkedinIcon /> },
-  { name: 'Email', url: 'mailto:tuanhg136@gmail.com', icon: <Mail size={20} /> },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/tuan936', icon: <LinkedinIcon /> },
+  { name: 'Email', url: 'mailto:tuanhoang6944@gmail.com', icon: <Mail size={20} /> },
 ];
 
 export default function App() {
@@ -100,8 +100,7 @@ export default function App() {
             <p className="text-gray-400 text-lg leading-relaxed">
               I'm a final-year student live in the Socialist Republic of Vietnam. 
               With over 6 months of hands-on programming experience, I am actively seeking 
-              opportunities to grow as a fresher. My journey involves solving algorithmic challenges 
-              and building modern ML/DL applications.
+              opportunities to grow as a fresher. My goal is to build my career path in Natural Language Processing (NLP) and Computer Vision (CV), while also exploring how to apply AI to IoT systems.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <div className="flex items-center gap-2 text-sm text-gray-300 bg-gray-900/60 px-4 py-2 rounded-full border border-gray-800">
@@ -155,42 +154,46 @@ export default function App() {
         </section>
 
         {/* GitHub Statistics */}
-        <section className="space-y-12">
-          <div className="flex items-center gap-3 text-blue-400 mb-8">
+        <section className="space-y-8">
+          <div className="flex items-center gap-3 text-blue-400 mb-6">
             <Award size={28} />
             <h2 className="text-3xl font-bold text-white">GitHub Statistics</h2>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="rounded-xl border border-gray-800 bg-gray-900/40 p-4 hover:border-gray-700 transition-colors">
-              <img 
-                src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=tun369&theme=algolia&utcOffset=8" 
-                alt="Productive Time" 
-                className="w-full h-auto"
+          {/* OSSInsight Dashboard Widget */}
+          <div className="rounded-xl border border-gray-800 bg-gray-900/40 p-5 hover:border-gray-700 transition-colors flex items-center justify-center overflow-hidden">
+            <picture className="w-full max-w-3xl flex justify-center">
+              <source 
+                media="(prefers-color-scheme: dark)" 
+                srcSet="https://next.ossinsight.io/widgets/official/compose-user-dashboard-stats/thumbnail.png?user_id=116370663&image_size=auto&color_scheme=dark" 
+                width="771" 
+                height="auto" 
               />
-            </div>
-            
-            <div className="rounded-xl border border-gray-800 bg-gray-900/40 p-4 hover:border-gray-700 transition-colors">
+              <img 
+                alt="Dashboard stats of @tun369" 
+                src="https://next.ossinsight.io/widgets/official/compose-user-dashboard-stats/thumbnail.png?user_id=116370663&image_size=auto&color_scheme=light" 
+                width="771" 
+                height="auto" 
+                className="w-full h-auto rounded-lg"
+              />
+            </picture>
+          </div>
+
+          {/* Languages & Repos Breakdown */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="rounded-xl border border-gray-800 bg-gray-900/40 p-4 hover:border-gray-700 transition-colors flex items-center justify-center">
               <img 
                 src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=tun369&theme=algolia" 
                 alt="Most Commit Languages" 
-                className="w-full h-auto"
-              />
-            </div>
-
-            <div className="rounded-xl border border-gray-800 bg-gray-900/40 p-4 hover:border-gray-700 transition-colors">
-              <img 
-                src="https://github-readme-streak-stats.herokuapp.com?user=tun369&theme=algolia&hide_border=true" 
-                alt="GitHub Streak" 
-                className="w-full h-auto"
+                className="w-full h-auto rounded-lg"
               />
             </div>
             
-            <div className="rounded-xl border border-gray-800 bg-gray-900/40 p-4 hover:border-gray-700 transition-colors">
+            <div className="rounded-xl border border-gray-800 bg-gray-900/40 p-4 hover:border-gray-700 transition-colors flex items-center justify-center">
               <img 
                 src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=tun369&theme=algolia" 
                 alt="Repositories per Language" 
-                className="w-full h-auto"
+                className="w-full h-auto rounded-lg"
               />
             </div>
           </div>
@@ -206,7 +209,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               { 
-                name: 'Coffee Leaves Diseases using ViT', 
+                name: 'Coffee Leaves Diseases using CNN & ViT', 
                 repoPath: 'tun369/ViT_Coffee_Leaves_Diseases',
                 desc: 'An end-to-end computer vision project for detecting and classifying coffee leaf diseases. It uses YOLOv11 to find and locate infected areas on leaves, and then applies a Vision Transformer (ViT) model to classify specific disease types with high accuracy, helping farmers protect plant health early.' 
               },
@@ -216,12 +219,12 @@ export default function App() {
                 desc: 'A comprehensive deep learning-based violence detection system designed for intelligent video surveillance. The system implements a 3-stage spatiotemporal feature extraction pipeline (RemoNet: SME -> STE -> GTE) that analyzes video streams with lightweight CNN backbones to identify violent behavior in real-time with minimal latency and high accuracy.' 
               },
               { 
-                name: 'DoAnTotNghiep', 
+                name: 'Pharmaceutical processing management system', 
                 repoPath: 'Johnyyd/DoAnTotNghiep',
                 desc: 'The Pharmaceutical Processing Management System (PPMS) is a comprehensive platform for managing drug manufacturing processes compliant with GMP-WHO (Good Manufacturing Practice - World Health Organization) standards. The system integrates production management, quality control, traceability, and data integrity assurance in a closed pharmaceutical manufacturing environment.' 
               },
               { 
-                name: 'Admission Chatbot', 
+                name: 'University Admission Chatbot', 
                 repoPath: 'tun369/admission_chatbot',
                 desc: 'An intelligent university admission counseling chatbot built with Retrieval-Augmented Generation (RAG). It crawls official admission data from the university website using BeautifulSoup, processes and chunks text using LangChain, and stores vectors in Qdrant for semantic search. It features a clean Flask web interface that allows prospective students to ask questions and receive quick, accurate answers about admission requirements, majors, and deadlines.' 
               },
