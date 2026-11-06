@@ -98,7 +98,7 @@ export default function App() {
               <h2 className="text-3xl font-bold text-white">About Me</h2>
             </div>
             <p className="text-gray-400 text-lg leading-relaxed">
-              I'm a final-year student live in the Socialist Republic of Vietnam. 
+              I'm a final-year student living in the Socialist Republic of Vietnam. 
               With over 6 months of hands-on programming experience, I am actively seeking 
               opportunities to grow as a fresher. My goal is to build my career path in Natural Language Processing (NLP) and Computer Vision (CV), while also exploring how to apply AI to IoT systems.
             </p>
